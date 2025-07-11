@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8" />
     <title>Assessment 1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
 <body>
+    <div class="container"  ng-app="myApp" ng-controller="myCtrl">
+        <h1>Lunch Checker</h1>
     
+        <div class="form-group">
+            <input ng-model="input" id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch"
+                class="form-control">
+        </div>
+        <div class="form-group">
+            <button ng-click="countString()" class="btn btn-default">Check If Too Much</button>
+        </div>
+        <div ng-if="showMessage" class="form-group message" ng-style="{'color': color, 'border': '2px solid ' + color}">
+            {{ message }}
+        </div>
+    </div>
+   
 </body>
 </html>
